@@ -22,5 +22,6 @@ public class MaxConsecutiveOnes {
             arr[i] = sc.nextInt();
         }
         System.out.print(maxConsecutiveOnes(arr));
+        sc.close();
     }
 }

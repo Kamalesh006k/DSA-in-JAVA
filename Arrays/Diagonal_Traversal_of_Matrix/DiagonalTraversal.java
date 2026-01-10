@@ -1,7 +1,6 @@
 import java.util.*;
 
 public class DiagonalTraversal {
-
     static int[] diagonalTraversal(int n, int[][] arr){
         int[] ans = new int[n*n];
         int i=0;
@@ -59,5 +58,6 @@ public class DiagonalTraversal {
         for(int i : result){
             System.out.print(i+" ");
         }
+        sc.close();
     }
 }

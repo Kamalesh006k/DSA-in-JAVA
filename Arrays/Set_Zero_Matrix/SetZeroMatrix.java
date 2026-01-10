@@ -59,6 +59,7 @@ public class SetZeroMatrix{
             }
             System.out.println();
         }
+        sc.close();
 
     }
 }

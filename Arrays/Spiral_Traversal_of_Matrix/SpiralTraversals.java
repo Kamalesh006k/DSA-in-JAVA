@@ -40,6 +40,7 @@ public class SpiralTraversals{
         }
         List<Integer> result = spiralTraversal(n, arr);
         System.out.println(result);
+        sc.close();
     }
     
 }
