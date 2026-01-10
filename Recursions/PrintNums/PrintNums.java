@@ -13,6 +13,7 @@ class PrintNums {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         printnums(n);
+        sc.close();
     }
     
 }
