@@ -3,20 +3,19 @@ import java.util.*;
 public class CombinationSum {
 
     static void combinationSum(int i, int n, int[] arr, List<Integer> ans, List<List<Integer>> ds, int target) {
-        if (i == n) {
-            if (target == 0) {
-                ds.add(new ArrayList<>(ans));
-            }
+        if (target == 0) {
+            ds.add(new ArrayList<>(ans));
             return;
         }
 
-        if (arr[i] <= target) {
-            ans.add(arr[i]);
-            combinationSum(i, n, arr, ans, ds, target - arr[i]);
+        for (int j = i; j < n; j++) {
+            if (j > i && arr[j] == arr[j - 1]) continue;
+            if (arr[j] > target) break;
+
+            ans.add(arr[j]);
+            combinationSum(j + 1, n, arr, ans, ds, target - arr[j]);
             ans.remove(ans.size() - 1);
         }
-
-        combinationSum(i + 1, n, arr, ans, ds, target);
     }
 
     public static void main(String[] args) {
@@ -24,7 +23,7 @@ public class CombinationSum {
         System.out.print("Enter the number of elements to insert: ");
         int n = sc.nextInt();
         int[] arr = new int[n];
-        System.out.println("Enter the elements.....");
+        System.out.print("Enter the elements: ");
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
