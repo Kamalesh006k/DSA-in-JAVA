@@ -1,18 +1,18 @@
 import java.util.*;
 
-public class PrefixMin {
-    public static void PrefixMinArray(int[] arr){
+public class SuffixMax {
+    public static void SuffixMaxArray(int[] arr){
         int n = arr.length;
-        int[] prefixmin = new int[n];
-        prefixmin[0] = arr[0];
-        for(int i=1; i<n; i++){
-            if(arr[i]<prefixmin[i-1]){
-                prefixmin[i] = arr[i];
+        int[] suffixmax = new int[n];
+        suffixmax[n-1] = arr[n-1];
+        for(int i=n-2; i>=0; i--){
+            if(arr[i]>suffixmax[i+1]){
+                suffixmax[i] = arr[i];
             }else{
-                prefixmin[i] = prefixmin[i-1];
+                suffixmax[i] = suffixmax[i+1];
             }
         }
-        for(int s: prefixmin){
+        for(int s: suffixmax){
             System.out.print(s+" ");
         }
     }
@@ -25,7 +25,7 @@ public class PrefixMin {
         for(int i=0; i<n; i++){
             arr[i] = sc.nextInt();
         }
-        PrefixMinArray(arr);
+        SuffixMaxArray(arr);
         sc.close();
     }    
 }
