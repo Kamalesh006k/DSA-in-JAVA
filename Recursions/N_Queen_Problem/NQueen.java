@@ -12,11 +12,11 @@ public class NQueen {
             r --;
             c --;
         }
-        int rr = row-1, cc = col+1;
-        while(rr >=0 && cc<n){
+        int rr = row+1, cc = col-1;
+        while(rr < n && cc>=0){
             if(chess[rr][cc] == 'Q') return false;
-            rr --;
-            cc ++;
+            rr ++;
+            cc --;
         }
 
         return true;
