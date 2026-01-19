@@ -1,6 +1,4 @@
 import java.util.*;
-
-import javax.management.Query;
 public class BinaryTree {
 
     public static class Node{
@@ -60,17 +58,17 @@ public class BinaryTree {
             if(root == null){
                 return;
             }
-            System.out.print(root.data+" ");
             InOrder(root.left);
+            System.out.print(root.data+" ");
             InOrder(root.right);
         }
         public void PostOrder(Node root){
             if(root == null){
                 return;
             }
-            System.out.print(root.data+" ");
             PostOrder(root.left);
             PostOrder(root.right);
+            System.out.print(root.data+" ");
         }
         public void LevelOrderTraversal(Node root){
             List<List<Integer>> ans = new ArrayList<>();
@@ -97,6 +95,38 @@ public class BinaryTree {
             }
             System.out.print(ans);
         }
+
+        public void binarysorting(Node root){
+            List<Integer> lst = new ArrayList<>();
+            Queue<Node> q = new LinkedList<>();
+            if(root == null){
+                System.out.print("Tree is Empty");
+                return;
+            }
+            q.offer(root);
+            while (!q.isEmpty()) {
+                if (q.peek().left != null) {
+                    q.offer(q.peek().left);
+                }
+                if (q.peek().right != null) {
+                    q.offer(q.peek().right);
+                }
+                lst.add(q.peek().data);
+                q.poll();
+            }
+
+            lst.sort(Comparator.naturalOrder());
+            BT bts = new BT(null);
+            int n = lst.size();
+            int i =0;
+            while(i<n){
+                bts.insert(lst.getFirst());
+                lst.removeFirst();
+                i++;
+            }
+
+            bts.LevelOrderTraversal(bts.root);
+        }
     }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
@@ -107,8 +137,8 @@ public class BinaryTree {
         for(int i=0; i<n; i++){
             bt.insert(sc.nextInt());
         }
-        boolean c = true;
-        while (c) {
+        String c = "y";
+        while (c.equals("y")) {
             System.out.print("""
                     1.Preorder Traversal
                     2.Inorder Traversal
@@ -124,10 +154,10 @@ public class BinaryTree {
             }
             System.out.println();
             System.out.print("Do you want to continue : y or n -> ");
-            if(sc.next() == "n"){
-                c = false;
-            }
+            c = sc.next();
 
         }
+        bt.binarysorting(bt.root);
+        sc.close();
     }
 }
