@@ -25,5 +25,6 @@ public class Prefix {
         for(String s: lst){
             System.out.print(s);
         }
+        sc.close();
     }
 }
