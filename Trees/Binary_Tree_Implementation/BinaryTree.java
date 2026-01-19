@@ -96,12 +96,12 @@ public class BinaryTree {
             System.out.print(ans);
         }
 
-        public void binarysorting(Node root){
+        public Node binarysorting(Node root){
             List<Integer> lst = new ArrayList<>();
             Queue<Node> q = new LinkedList<>();
             if(root == null){
                 System.out.print("Tree is Empty");
-                return;
+                return root;
             }
             q.offer(root);
             while (!q.isEmpty()) {
@@ -126,6 +126,7 @@ public class BinaryTree {
             }
 
             bts.LevelOrderTraversal(bts.root);
+            return bts.root;
         }
     }
     public static void main(String[] args){
@@ -144,6 +145,7 @@ public class BinaryTree {
                     2.Inorder Traversal
                     3.Postorder Traversal
                     4.Level Order traversal
+                    5.Binary Tree Sorting
                     """);
             int k = sc.nextInt();
             switch (k) {
@@ -151,13 +153,13 @@ public class BinaryTree {
                 case 2 -> bt.InOrder(bt.root);
                 case 3 -> bt.PostOrder(bt.root);
                 case 4 -> bt.LevelOrderTraversal(bt.root);
+                case 5 -> bt.root = bt.binarysorting(bt.root);
             }
             System.out.println();
             System.out.print("Do you want to continue : y or n -> ");
             c = sc.next();
 
         }
-        bt.binarysorting(bt.root);
         sc.close();
     }
 }
