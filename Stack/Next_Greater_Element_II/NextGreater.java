@@ -1,19 +1,26 @@
 import java.util.*;
-public class Monotonic {
+public class NextGreater {
 
-    public static void MonotonicStack(int[] arr){
+    public static void Nge(int[] arr){
         Stack<Integer> st = new Stack<>();
-        for(int i:arr){
-            while(!st.isEmpty() && st.peek()>= i){
+        int n = arr.length;
+        int[] Nge = new int[n];
+        for(int i=2*n-1; i>=0; i--){
+            while(!st.isEmpty() && arr[i%n]>=st.peek()){
                 st.pop();
             }
-            st.push(i);
+            if (i < n) {
+                if (st.isEmpty()) {
+                    Nge[i] = -1;
+                } else {
+                    Nge[i] = st.peek();
+                }
+            }
+            st.push(arr[i%n]);
         }
-
-        for(int i: st){
+        for(int i: Nge){
             System.out.print(i+" ");
         }
-
     }
     public static void main(String[] args){
          Scanner sc = new Scanner(System.in);
@@ -24,7 +31,6 @@ public class Monotonic {
         for(int i=0; i<n; i++){
             arr[i] = sc.nextInt();
         }
-        MonotonicStack(arr);
-        sc.close();
-    }    
+        Nge(arr);
+    }
 }

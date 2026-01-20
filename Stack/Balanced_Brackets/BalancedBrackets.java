@@ -6,7 +6,7 @@ public class BalancedBrackets {
         for(int i=0; i<n; i++){
             if(charArray[i] == '(' || charArray[i] =='{' || charArray[i] == '['){
                 lst.push(charArray[i]);
-            }else if((!lst.isEmpty()) &&((lst.peek()=='(' && charArray[i]==')')||(lst.peek()=='{' && charArray[i]=='}')||(lst.peek()=='[' && charArray[i]==']'))){
+            }else if((!lst.isEmpty()) && ((lst.peek()=='(' && charArray[i]==')')||(lst.peek()=='{' && charArray[i]=='}')||(lst.peek()=='[' && charArray[i]==']'))){
                 lst.pop();
             }else{
                 return false;
@@ -30,5 +30,6 @@ public class BalancedBrackets {
         }else{
             System.out.println("No, It is not balanced");
         }
+        sc.close();
     }
 }

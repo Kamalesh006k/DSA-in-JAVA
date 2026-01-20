@@ -4,7 +4,7 @@ public class Monotonic {
     public static void MonotonicStack(int[] arr){
         Stack<Integer> st = new Stack<>();
         for(int i:arr){
-            while(!st.isEmpty() && st.peek()< i){
+            while(!st.isEmpty() && st.peek()<=i){
                 st.pop();
             }
             st.push(i);
