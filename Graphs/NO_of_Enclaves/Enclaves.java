@@ -54,5 +54,6 @@ public class Enclaves {
         }
 
         System.out.println("The number of enclaves: "+ans);
+        sc.close();
     }
 }
