@@ -2,7 +2,7 @@ import java.util.*;
 public class Kadanes {
 
     static int MaxSumSubarray(int[] arr){
-        int sum = 0,max=0;
+        int sum = 0,max=Integer.MIN_VALUE;
         for(int i=0; i<arr.length; i++){
             if(sum<0) sum=0;
             sum+=arr[i];
