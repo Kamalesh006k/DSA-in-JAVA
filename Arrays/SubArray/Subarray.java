@@ -6,7 +6,6 @@ public class Subarray {
             return;
         }
         if(end == arr.length){
-            list.clear();
             subArray(arr, start+1, start+1,list,ans);
         }else{
             list.clear();
