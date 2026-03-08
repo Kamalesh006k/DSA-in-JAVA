@@ -17,7 +17,6 @@ public class Knapsack {
     }
 
     
-
     static double knapsack(Node[] pro,int k){
        Arrays.sort(pro, new Comparator<Node>() {
         @Override

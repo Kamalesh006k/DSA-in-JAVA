@@ -1,4 +1,5 @@
 import java.util.*;
+
 class pair{
     int row;
     int col;
@@ -14,7 +15,6 @@ public class Island{
         vis[r][c]  = 1;
         q.add(new pair(r, c));
         lst.add("(0,0)");
-
         while(!q.isEmpty()){
             pair cur= q.poll();
             int row = cur.row;
@@ -54,7 +54,6 @@ public class Island{
             }
         }
         System.out.println("No of Distinct Island: "+st.size());
-
         sc.close();
     }
 }
