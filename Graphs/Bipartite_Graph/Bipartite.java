@@ -1,5 +1,4 @@
 import java.util.*;
-
 class pair{
     int node;
     int color;
@@ -10,12 +9,10 @@ class pair{
     }
 }
 public class Bipartite {
-
     static boolean check(int st,List<List<Integer>> adj, int[] color){
         Queue<pair> q = new LinkedList<>();
         q.add(new pair(st, 0));
         color[st] = 0;
-
         while(!q.isEmpty()){
             pair cur = q.poll();
             for(int s: adj.get(cur.node)){
@@ -56,7 +53,6 @@ public class Bipartite {
                 System.out.println("False");
                 return;
             }
-            
         }
         System.out.println("True");
     }
