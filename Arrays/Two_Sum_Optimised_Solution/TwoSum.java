@@ -23,7 +23,7 @@ public class TwoSum {
         }
         int[] result = twoSum(arr, target);
         for(int s: result){
-            System.out.println(s+" ");
+            System.out.print(s+" ");
         }
     }
 }
