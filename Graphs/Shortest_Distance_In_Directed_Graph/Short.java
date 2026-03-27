@@ -10,7 +10,6 @@ class Pair{
     }
 }
 public class Short {
-
     static void topo(int src, List<List<Pair>> adj, Stack<Integer> st, int[] vis){
         vis[src]  = 1;
         for(Pair s : adj.get(src)) {
@@ -20,13 +19,10 @@ public class Short {
         }
         st.add(src);
     }
-
     static void ShortestPath(List<List<Pair>> adj, Stack<Integer> st, int[] dist) {
         dist[st.peek()] = 0;
-
         while (!st.isEmpty()) {
             int node = st.pop();
-
             if (dist[node] != Integer.MAX_VALUE) {
                 for (Pair p : adj.get(node)) {
                     if (dist[node] + p.dist < dist[p.node]) {
