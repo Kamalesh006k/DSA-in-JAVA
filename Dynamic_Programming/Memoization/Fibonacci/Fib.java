@@ -5,7 +5,7 @@ public class Fib {
         if(dp[n] != -1) return dp[n];
         if(n == 0) return dp[n] = 0;
         if(n == 1) return dp[n] = 1;
-        return dp[n] = fib(n-1,dp)+fib(n-2,dp);
+        return dp[n] = fib(n-1,dp)+fib(n-2,dp); //5
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

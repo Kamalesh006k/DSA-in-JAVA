@@ -1,6 +1,5 @@
 import java.util.*;
 public class NQueen {
-
     static boolean isValid(int row, int col,int n,char[][] chess){
         for(int i=0; i<n; i++){
             if(chess[row][i]=='Q') return false;
